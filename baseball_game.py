@@ -308,9 +308,7 @@ def main():
                     while True:
                         replay_input = input("You win, one more(Y/N)?")
                         if replay_input == '0':
-                            print("Thank you for using this program")
-                            print("End of the Game")
-                            return
+                            replay_input = 'no'
                     
                         if is_yes(replay_input) or is_no(replay_input):
                             break
@@ -322,9 +320,8 @@ def main():
 
                 user_input = input("Input guess number : ")
                 if user_input == '0':
-                    print("Thank you for using this program")
-                    print("End of the Game")
-                    return
+                    replay_input = 'no'
+                    break
             
         if is_yes(replay_input):
             random_number = str(get_not_duplicated_three_digit_number())
