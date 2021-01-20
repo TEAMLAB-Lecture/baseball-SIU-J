@@ -318,9 +318,15 @@ def main():
                 if is_yes(replay_input) or is_no(replay_input):
                     break
 
-                user_input = input("Input guess number : ")
-                if user_input == '0':
-                    replay_input = 'no'
+                while True:
+                    user_input = input("Input guess number : ")
+                    if user_input == '0':
+                        replay_input = 'no'
+                        break
+                    if not is_validated_number(user_input):
+                        print("Wrong Input, Input again")
+                        continue
+
                     break
             
         if is_yes(replay_input):
